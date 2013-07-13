@@ -31,7 +31,7 @@ public class BlockBoundsBlock extends Block {
     
     @Override
     public boolean renderAsNormalBlock() {
-        // TODO Auto-generated method stub
+        
         return true;
     }
     
