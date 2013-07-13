@@ -74,7 +74,6 @@ public class BlockBuildingConstructor extends Block {
         if (te == null)
             return false;
 
-        w.playSoundAtEntity(p, Reference.MOD_ID + ":sound1", 10.0F, 10.0F);
         te.onBlockActivated(w, x, y, z, p,
                 par6, par7, par8, par9);
         
