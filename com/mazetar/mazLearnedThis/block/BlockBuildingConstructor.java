@@ -30,7 +30,6 @@ public class BlockBuildingConstructor extends Block {
     
     @Override
     public boolean hasTileEntity(int metadata) {
-        // TODO Auto-generated method stub
         return true;
     }
     
