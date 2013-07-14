@@ -20,16 +20,18 @@ import net.minecraftforge.event.ForgeSubscribe;
 import org.lwjgl.opengl.GL11;
 
 import com.mazetar.mazLearnedThis.MazLearnedThis;
+import com.mazetar.mazLearnedThis.basemaker.GuiOverlayBaseMaker;
 import com.mazetar.mazLearnedThis.block.ModBlocks;
 import com.mazetar.mazLearnedThis.lib.Reference;
 
 public class MazGuiOverlay extends Gui {
 
     private Minecraft mc;
-
+    private GuiOverlayBaseMaker guiOverlayBaseMaker;
     public MazGuiOverlay(Minecraft minecraft) {
         super();
         mc = minecraft;
+        guiOverlayBaseMaker = MazLearnedThis.instance.GetTopBarGui();
     }
 
     private static final int BUFF_ICON_SIZE = 18;
@@ -92,7 +94,7 @@ public class MazGuiOverlay extends Gui {
     }
 
     @ForgeSubscribe(priority = EventPriority.NORMAL)
-    public void DrawModeIcon(RenderGameOverlayEvent event) {
+    public void DrawGuiOverlays(RenderGameOverlayEvent event) {
         //
         // We draw after the ExperienceBar has drawn. The event raised by
         // GuiIngameForge.pre()
@@ -106,6 +108,12 @@ public class MazGuiOverlay extends Gui {
         if (event.isCancelable() || event.type != ElementType.EXPERIENCE) {
             return;
         }
+        
+        
+        guiOverlayBaseMaker.DrawTopBar(event, this.mc);
+        
+        
+        // Test code:
         String txt = "OFFLINE";
         int color = 0x990000;
         if (MazLearnedThis.PowerOn) {

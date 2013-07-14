@@ -3,7 +3,7 @@ package com.mazetar.mazLearnedThis.client.model;
 import org.lwjgl.opengl.GL11;
 
 import com.mazetar.mazLearnedThis.lib.Reference;
-import com.mazetar.mazLearnedThis.tileentity.TileEntityObjBuilder;
+import com.mazetar.mazLearnedThis.tileentity.TileEntityObjBuilding;
 
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.relauncher.Side;
@@ -14,10 +14,10 @@ import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
 
 @SideOnly(Side.CLIENT)
-public class ModelTutorial extends ModelBase {
+public class ModelBaseBuildings extends ModelMazBase {
     private IModelCustom modelTutorial;
     
-    public ModelTutorial()
+    public ModelBaseBuildings()
     {
         modelTutorial = AdvancedModelLoader.loadModel("/assets/"+ Reference.MOD_ID +"/models/turner.obj");
     }
@@ -27,7 +27,7 @@ public class ModelTutorial extends ModelBase {
         modelTutorial.renderAll();
     }
     
-    public void render(TileEntityObjBuilder tileEntity, double x, double y, double z)
+    public void render(TileEntityObjBuilding tileEntity, double x, double y, double z)
     {
         // Push a blank matrix onto the stack
         GL11.glPushMatrix();

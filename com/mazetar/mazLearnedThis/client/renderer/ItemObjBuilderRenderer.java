@@ -2,7 +2,7 @@ package com.mazetar.mazLearnedThis.client.renderer;
 
 import org.lwjgl.opengl.GL11;
 
-import com.mazetar.mazLearnedThis.client.model.ModelTutorial;
+import com.mazetar.mazLearnedThis.client.model.ModelBaseBuildings;
 import com.mazetar.mazLearnedThis.lib.Reference;
 
 import cpw.mods.fml.client.FMLClientHandler;
@@ -15,10 +15,10 @@ import net.minecraftforge.client.IItemRenderer;
 
 public class ItemObjBuilderRenderer implements IItemRenderer {
 
-    private ModelTutorial modelTutorial;
+    private ModelBaseBuildings modelTutorial;
     
     public ItemObjBuilderRenderer() {
-        modelTutorial = new ModelTutorial();
+        modelTutorial = new ModelBaseBuildings();
         
     }
     

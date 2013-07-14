@@ -73,7 +73,7 @@ public class BlockBuildingConstructor extends Block {
         TileEntityTest te = (TileEntityTest)w.getBlockTileEntity(x, y, z);
         if (te == null)
             return false;
-
+        
         te.onBlockActivated(w, x, y, z, p,
                 par6, par7, par8, par9);
         

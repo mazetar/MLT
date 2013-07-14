@@ -1,4 +1,4 @@
-package com.mazetar.mazLearnedThis.buildingConstruction;
+package com.mazetar.mazLearnedThis.basemaker;
 
 public class BuildingPlans {
 

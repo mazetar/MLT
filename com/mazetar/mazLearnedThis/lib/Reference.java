@@ -10,5 +10,6 @@ public class Reference {
     public static final String SERVER_PROXY_CLASS = "com.mazetar.mazLearnedThis.proxy.CommonProxy";
     public static final String CLIENT_PROXY_CLASS = "com.mazetar.mazLearnedThis.proxy.ClientProxy";
     public static final boolean DEBUGGING = true;
+    public static final int TICKS_PER_SEC = 20;
     
 }
