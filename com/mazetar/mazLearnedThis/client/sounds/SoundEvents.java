@@ -10,7 +10,11 @@ public class SoundEvents {
     @ForgeSubscribe
     public void onSound(SoundLoadEvent event) {
     // You add them the same way as you add blocks, mod_name is your modID.
-        event.manager.soundPoolSounds.addSound(Reference.MOD_ID + ":sound1.ogg");
+        event.manager.addSound("mazlt:sound1.ogg");
+        event.manager.addSound("mazlt:sound2.ogg");
+        
+        
+        
     }
 
 }

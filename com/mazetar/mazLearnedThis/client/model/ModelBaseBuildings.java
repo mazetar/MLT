@@ -39,7 +39,7 @@ public class ModelBaseBuildings extends ModelMazBase {
         GL11.glScalef(0.5f, 0.5f, 0.5f);
      
         // Bind the texture, so that OpenGL properly textures our block.
-        FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation(Reference.MOD_ID, "\\textures\\models\\turner.png"));
+        FMLClientHandler.instance().getClient().renderEngine.func_110577_a(new ResourceLocation(Reference.MOD_ID, "\\textures\\models\\turner2.png"));
         
         // Render the object, using modelTutBox.renderAll();
         this.render();

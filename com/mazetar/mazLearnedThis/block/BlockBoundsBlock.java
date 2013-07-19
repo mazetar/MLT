@@ -7,8 +7,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 public class BlockBoundsBlock extends Block {
@@ -27,6 +29,12 @@ public class BlockBoundsBlock extends Block {
     public void registerIcons(IconRegister iconRegister) {
        this.blockIcon = iconRegister.registerIcon(Reference.MOD_ID.toLowerCase() + ":BlockBounds");
        
+    }
+
+    @Override
+    public ItemStack getPickBlock(MovingObjectPosition target, World world,
+            int x, int y, int z) {
+        return super.getPickBlock(target, world, x, y, z);
     }
     
     @Override

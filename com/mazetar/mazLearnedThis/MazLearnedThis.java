@@ -17,6 +17,8 @@ import com.mazetar.mazLearnedThis.client.input.*;
 import com.mazetar.mazLearnedThis.dimensions.WorldProviderMazMultipleBiomes;
 import com.mazetar.mazLearnedThis.dimensions.gen.MazOreGen;
 import com.mazetar.mazLearnedThis.entity.ModEntity;
+import com.mazetar.mazLearnedThis.fluids.ModFluids;
+import com.mazetar.mazLearnedThis.handlers.EventHandlerMaz;
 import com.mazetar.mazLearnedThis.item.ModItems;
 import com.mazetar.mazLearnedThis.lib.DimensionRef;
 import com.mazetar.mazLearnedThis.lib.Reference;
@@ -53,7 +55,7 @@ public class MazLearnedThis {
     public static boolean ShowBlockText = false;
     
     public static GuiOverlayBaseMaker guiOverlayBaseMaker;
-
+    
 
     private void test(SoundLoadEvent e)
     {
@@ -109,12 +111,14 @@ public class MazLearnedThis {
     public void load(FMLInitializationEvent event){
         
         // Initialize mod blocks, items, entities and biomes.
+        ModFluids.Init();
         ModBlocks.init();
         ModItems.init();
         ModEntity.init();
         ModBiomes.init();
         
         MinecraftForge.EVENT_BUS.register(new MazGuiOverlay(Minecraft.getMinecraft()));
+        MinecraftForge.EVENT_BUS.register(new EventHandlerMaz());
 
         GameRegistry.registerTileEntity(TileEntityFurnaceChest.class, "TileEntity Furnace Chest");
         GameRegistry.registerTileEntity(TileEntityTest.class, "TileEntity Test");
