@@ -20,6 +20,7 @@ public class ModBlocks {
     public static int BLOCK_BOUNDSBLOCK_ID = 673;
     public static int BUILDING_BASE_ID = 674;
     public static int MAZ_FLUID_ID = 675;
+    public static int FLUID_STORAGE = 676;
     
     /* Name */
     
@@ -30,6 +31,7 @@ public class ModBlocks {
     public static String NAME_BLOCK_BOUNDSBLOCK = "BlockBounds";
     public static String NAME_BLOCK_BUILDING_BASE = "BuildingBase";
     public static String NAME_BLOCK_MAZ_FLUID = "Maz Fluid Block";
+    public static String NAME_FLUID_STORAGE = "MazFluidStorage";
     
     /* BLOCKS */
     public static BlockFurnaceChest blockFurnaceChest;
@@ -37,6 +39,7 @@ public class ModBlocks {
     public static BlockBuildingConstructor blockTest;
     public static BlockBuildingBase buildingBase;
     public static BlockMazFluid mazFluidBlock;
+    public static BlockFluidStorage mazFluidStorage;
     
     
     
@@ -48,6 +51,7 @@ public class ModBlocks {
         BLOCK_BOUNDSBLOCK_ID = config.getBlock(NAME_BLOCK_BOUNDSBLOCK, BLOCK_BOUNDSBLOCK_ID).getInt();
         BUILDING_BASE_ID = config.getBlock(NAME_BLOCK_BUILDING_BASE, BUILDING_BASE_ID).getInt();
         MAZ_FLUID_ID = config.getBlock(NAME_BLOCK_MAZ_FLUID, MAZ_FLUID_ID).getInt();
+        FLUID_STORAGE = config.getBlock(NAME_FLUID_STORAGE, FLUID_STORAGE).getInt();
         
     }
     
@@ -58,18 +62,22 @@ public class ModBlocks {
         blockTest = new BlockBuildingConstructor(BUILDING_CONSTRUCTOR_ID, "name");
         buildingBase = new BlockBuildingBase(BUILDING_BASE_ID);
         mazFluidBlock = new BlockMazFluid(MAZ_FLUID_ID);
+        mazFluidStorage = new BlockFluidStorage(FLUID_STORAGE);
         
         GameRegistry.registerBlock(blockFurnaceChest, "FurnaceChest");
         GameRegistry.registerBlock(blockMazPortal, "Maz Portal");
         GameRegistry.registerBlock(blockTest, "Test Block");
         GameRegistry.registerBlock(buildingBase, NAME_BLOCK_BUILDING_BASE);
         GameRegistry.registerBlock(mazFluidBlock, NAME_BLOCK_MAZ_FLUID);
+        GameRegistry.registerBlock(mazFluidStorage, NAME_FLUID_STORAGE);
         
         LanguageRegistry.addName(blockFurnaceChest, "Furnace Chest");
         LanguageRegistry.addName(blockMazPortal, "Maz Portal");
         LanguageRegistry.addName(blockTest, "Test Block");
         LanguageRegistry.addName(buildingBase, "Building Base");
         LanguageRegistry.addName(mazFluidBlock, "MazFluidLR");
+        LanguageRegistry.addName(mazFluidStorage, NAME_FLUID_STORAGE);
+        
         
         
        initializeRecipes();
